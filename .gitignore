@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# BEGIN:handbook-credentials
+# Credentials never get committed. See docs/CREDENTIALS.md.
+.env
+.env.*
+!.env.example
+# END:handbook-credentials
