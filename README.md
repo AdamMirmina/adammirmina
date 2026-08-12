@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Adam Mirmina
 
-## Getting Started
+Purdue University, B.S. Data Science and B.A. Cognitive Science, statistics
+concentration. I run a web design studio and do cardiovascular imaging research.
 
-First, run the development server:
+Most of what I build is private, either because it is client work or because it holds
+someone's real data. The links below go to the running versions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Ramsgate Studio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A web design studio for small local businesses in South Jersey. Flat-fee builds plus
+monthly managed hosting, at [ramsgatestudio.com](https://ramsgatestudio.com).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I built and run the platform behind it: a client dashboard, an admin side for tracking
+each project and running client calls off a shared agenda, a four-step intake, contract
+signing for both sides, Stripe payments, and push notifications. It has been migrated
+three times while clients were using it, from Vercel to Cloudflare Workers, from
+Supabase to self-hosted PocketBase, and from GitHub Actions to builds that run on the
+hosting platform itself.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Cardiovascular Imaging Research Lab, Purdue
 
-## Learn More
+Undergraduate research assistant under Dr. Craig Goergen, working on aortic measurement
+from ultrasound. A writeup of the summer's work is at
+[share.adammirmina.com/cvirl](https://share.adammirmina.com/cvirl).
 
-To learn more about Next.js, take a look at the following resources:
+The main result is a detector that measures a mouse's aortic root by reading each frame
+on its own rather than tracking motion between frames, so it cannot accumulate drift. It
+agrees with hand-traced measurements to within 3% on two animals. Along the way it
+turned out the lab's existing tracker was overstating how much the vessel expands with
+each heartbeat, by two to three times, in the direction that makes a stiffening vessel
+read as healthy.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Things I have built
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**PoolVision** finds shot attempts in pool basketball from a single fixed camera with no
+manual tagging, then calls each one a make or a miss. 82.2% accurate on shots it never
+saw in training, holding at 76.5% on a separate recording. Python and PyTorch.
 
-## Deploy on Vercel
+**Bro Science** is a strength-training app with an AI coach that reads the lifter's own
+routine and history before proposing changes. It cites the study behind a
+recommendation, only where a study actually tested that exercise, and says so when it
+lacks the data to answer. React Native and PocketBase.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Cashbook** is a personal ledger that keeps itself current, pulling from a bank
+connection, business income and expenses, and statements read out of my own inbox, then
+emailing my accountant monthly. Cloudflare Workers and PocketBase.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**[Corridor](https://github.com/AdamMirmina/corridor)** tracks leadership turnover
+across 101 Philadelphia community development corporations, built from Form 990 filings
+and public records. It is the dataset behind a Drexel STAR Scholars study. Live at
+[corridor.adammirmina.com](https://corridor.adammirmina.com).
+
+### Reach me
+
+[amirmina@purdue.edu](mailto:amirmina@purdue.edu) ·
+[linkedin.com/in/adam-mirmina](https://linkedin.com/in/adam-mirmina)
