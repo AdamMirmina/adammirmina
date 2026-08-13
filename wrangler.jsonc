@@ -1,0 +1,18 @@
+{
+  // adammirmina.com — personal site, Next.js on Cloudflare Workers via OpenNext.
+  // Workers rather than Vercel per the standing default for anything new here.
+  "name": "adammirmina",
+  "account_id": "7add713aa8b1453972d1181241b4f88c",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-01-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // Kept on so there is always a working URL that does not depend on the apex
+  // DNS being pointed here. Useful for review, and it was the only way to see
+  // the site at all while adammirmina.com still resolved to Vercel.
+  "workers_dev": true,
+  "routes": [{ "pattern": "adammirmina.com", "custom_domain": true }]
+}
