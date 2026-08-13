@@ -55,15 +55,21 @@ export function TopBar() {
     >
       <div className="border-b border-rule bg-ground/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-          <a href="#top" className="font-display text-lg leading-none">
+          {/* nowrap: at 390px "Adam Mirmina" broke over two lines and made the
+              whole bar taller. The nav beside it scrolls, so it can give up the
+              width instead. */}
+          <a href="#top" className="shrink-0 whitespace-nowrap font-display text-lg leading-none">
             {site.name}
           </a>
-          <ul className="hidden gap-7 sm:flex">
+          {/* Scrolls sideways on a phone rather than collapsing into a
+              hamburger. Five short words fit, and a menu that needs opening to
+              tell you what is in it is worse than one you can flick. */}
+          <ul className="-mx-2 flex gap-5 overflow-x-auto px-2 sm:mx-0 sm:gap-7 sm:overflow-visible sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {NAV.map((n) => (
               <li key={n.id}>
                 <a
                   href={`#${n.id}`}
-                  className={`border-b pb-0.5 text-sm transition-colors ${
+                  className={`whitespace-nowrap border-b pb-0.5 text-sm transition-colors ${
                     active === n.id
                       ? "border-ink text-ink"
                       : "border-transparent text-ink-dim hover:text-ink"
@@ -74,12 +80,6 @@ export function TopBar() {
               </li>
             ))}
           </ul>
-          <a
-            href={`mailto:${site.email}`}
-            className="text-sm text-ink-dim transition-colors hover:text-ink sm:hidden"
-          >
-            Email
-          </a>
         </nav>
       </div>
     </header>

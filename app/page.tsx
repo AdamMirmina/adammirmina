@@ -43,7 +43,11 @@ export default function Home() {
               </Reveal>
             </div>
 
-            <Reveal delay={120} className="hidden lg:block">
+            {/* Shown on every size. Hiding it below lg left a phone with no
+                image at all on a site whose whole premise is being visual, and
+                the phone is where most people will open this. Capped in width so
+                a 4:5 portrait does not eat a whole small screen. */}
+            <Reveal delay={120} className="mx-auto w-full max-w-[16rem] lg:mx-0 lg:max-w-none">
               <Frame photo={site.portrait} priority />
             </Reveal>
           </div>

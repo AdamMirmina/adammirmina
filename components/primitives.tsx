@@ -103,12 +103,16 @@ export function Frame({
 }
 
 /** Large figures, set as type. Never a card with a coloured dot next to a
-    number: that is the house style of every dashboard template. */
+    number: that is the house style of every dashboard template.
+ *
+ * The width cap is deliberately desktop-only. It exists to stop a label running
+ * the full width of a desktop column, and applying it at 390px only makes
+ * three-word labels wrap for no reason. */
 export function Facts({ facts }: { facts: { value: string; label: string }[] }) {
   return (
     <dl className="flex flex-wrap gap-x-10 gap-y-5">
       {facts.map((f) => (
-        <div key={f.label} className="max-w-[13rem]">
+        <div key={f.label} className="max-w-full sm:max-w-[13rem]">
           <dt className="font-display text-3xl leading-none">{f.value}</dt>
           <dd className="mt-2 text-sm leading-snug text-ink-dim">{f.label}</dd>
         </div>
