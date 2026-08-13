@@ -60,3 +60,7 @@ docs/STATE.md
 
 scripts/.fonts/
 _shots/
+
+# Build output
+.open-next/
+.wrangler/
