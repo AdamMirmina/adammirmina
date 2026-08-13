@@ -1,19 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter } from "next/font/google";
+import { Archivo, Newsreader } from "next/font/google";
 import "./globals.css";
 
-/* Instrument Serif for display, Inter for reading. The pairing is the reason the
-   page reads as editorial rather than as a developer template, and it costs two
-   font files because Instrument Serif is only ever used at large sizes. */
-const display = Instrument_Serif({
+/* The inverse of the usual portfolio pairing: sans for display, serif for
+   reading. Archivo is a sturdy grotesque with no trend attached to it, and
+   Newsreader handles long paragraphs far better than a UI sans while carrying
+   the warmth the paper ground wants. The first build used Instrument Serif and
+   Inter, which together are the default look of the category. */
+const display = Archivo({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["600", "700"],
   display: "swap",
 });
 
-const sans = Inter({
-  variable: "--font-sans",
+const body = Newsreader({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
@@ -47,13 +49,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
-  colorScheme: "dark",
+  themeColor: "#f6f3ec",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} antialiased`}>
+    <html lang="en" className={`${display.variable} ${body.variable} antialiased`}>
       <body>
         {children}
         {/* Structured data, so a search result for his name resolves to a person

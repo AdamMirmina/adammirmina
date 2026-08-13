@@ -53,12 +53,12 @@ export function TopBar() {
         shown ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="border-b border-rule bg-ground/80 backdrop-blur-md">
+      <div className="border-b border-rule bg-paper/85 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
           {/* nowrap: at 390px "Adam Mirmina" broke over two lines and made the
               whole bar taller. The nav beside it scrolls, so it can give up the
               width instead. */}
-          <a href="#top" className="shrink-0 whitespace-nowrap font-display text-lg leading-none">
+          <a href="#top" className="shrink-0 whitespace-nowrap font-display text-lg font-bold leading-none tracking-tight">
             {site.name}
           </a>
           {/* Scrolls sideways on a phone rather than collapsing into a
@@ -71,8 +71,8 @@ export function TopBar() {
                   href={`#${n.id}`}
                   className={`whitespace-nowrap border-b pb-0.5 text-sm transition-colors ${
                     active === n.id
-                      ? "border-ink text-ink"
-                      : "border-transparent text-ink-dim hover:text-ink"
+                      ? "border-spot text-ink"
+                      : "border-transparent text-ink-2 hover:text-ink"
                   }`}
                 >
                   {n.label}

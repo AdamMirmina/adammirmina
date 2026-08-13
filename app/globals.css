@@ -3,37 +3,42 @@
 /* ---------------------------------------------------------------------------
    adammirmina.com
 
-   One deliberate decision drives the whole look: the interface is monochrome
-   and the photographs carry every bit of colour on the page. That is why the
-   palette below has no accent hue in it. It makes the images the loudest thing
-   in the room, which is what "very visual" should mean, and it means a
-   photograph can be swapped for another without anything clashing.
+   Rebuilt 2026-08-13. The first version was near-black with a display serif,
+   which Adam called "the dark mode cs student look", and he was right: that
+   combination is the house style of the exact category this site is trying not
+   to sit in.
 
-   The second decision is the type pairing. A high-contrast serif at display
-   sizes against a plain grotesque for reading gives the page an editorial
-   register rather than a developer-portfolio one, and it is the cheapest way to
-   look made rather than assembled.
+   This one is printed rather than lit. Warm paper, near-black ink, and one hot
+   spot colour used the way a second plate is used in print: rules, labels, the
+   active state, and nothing else. Photographs still carry the rest of the
+   colour, which is why the spot is warm and small in dose. It never competes
+   with an image, it just marks the page as designed.
+
+   Type is deliberately the inverse of the usual portfolio pairing. Sans for
+   display, serif for reading. Archivo is a sturdy American grotesque with no
+   trend attached to it, and Newsreader reads long-form far better than a UI
+   sans while carrying warmth that suits the paper.
 --------------------------------------------------------------------------- */
 
 @theme inline {
-  --color-ink: #f2efe9;        /* warm off-white; pure white is harsh on black */
-  --color-ink-dim: #9d9a94;
-  --color-ink-faint: #56534e;
-  --color-ground: #0a0a0b;
-  --color-raise: #121214;
-  --color-rule: #232326;
+  --color-paper: #f6f3ec;      /* warm, not white; pure white glares on a phone */
+  --color-paper-2: #efeae0;    /* a shade down, for panels and empty photo slots */
+  --color-ink: #191713;        /* near-black with warmth, never #000 */
+  --color-ink-2: #5a554b;
+  --color-ink-3: #8d8779;
+  --color-rule: #ddd6c8;
+  --color-spot: #b8422a;       /* the second plate */
 
   --font-display: var(--font-display);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-body);
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Anchored sections would otherwise land under the top bar. */
   scroll-padding-top: 5rem;
 }
 
@@ -47,37 +52,30 @@ html {
 }
 
 body {
-  background: var(--color-ground);
+  background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-body), Georgia, serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--color-ink);
-  color: var(--color-ground);
+  background: var(--color-spot);
+  color: var(--color-paper);
 }
 
-/* Visible focus, and only for keyboard users. A portfolio that traps a keyboard
-   user is a portfolio that argues against itself. */
 :focus-visible {
-  outline: 2px solid var(--color-ink);
+  outline: 2px solid var(--color-spot);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* Reveal on scroll. Deliberately small: 12px and a fade. Anything larger reads
-   as the page assembling itself in front of you, which is a gimmick that gets
-   old on the second visit. Elements start visible and are hidden by JS only if
-   IntersectionObserver is available, so with JS off nothing disappears. */
-[data-reveal] {
-  opacity: 1;
-}
-[data-reveal].is-armed {
-  opacity: 0;
-  transform: translateY(12px);
-}
+/* Reveal on scroll. Small on purpose: 12px and a fade. Anything larger reads as
+   the page assembling itself, which is a gimmick that gets old on the second
+   visit. Elements start visible and are hidden by JS only where it can also
+   un-hide them, so with scripting off nothing disappears. */
+[data-reveal] { opacity: 1; }
+[data-reveal].is-armed { opacity: 0; transform: translateY(12px); }
 [data-reveal].is-in {
   opacity: 1;
   transform: none;
@@ -85,19 +83,15 @@ body {
               transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* A hairline that reads as drawn rather than as a border. */
-.rule {
-  border-top: 1px solid var(--color-rule);
-}
+.rule { border-top: 1px solid var(--color-rule); }
 
-/* An empty photo slot. Without this it is a black rectangle on a black page,
-   which reads as a rendering failure rather than as a photograph that has not
-   been taken yet. The hatch is faint enough to disappear entirely the moment a
-   real image sits on top of it. */
+/* An empty photo slot. It has to read as a photograph that has not been taken
+   yet rather than as a rendering failure, so it carries a faint hatch and its
+   own brief. Both disappear the moment a real image sits on top. */
 .frame-pending {
   background-image: repeating-linear-gradient(
     45deg,
     transparent 0 11px,
-    rgba(255, 255, 255, 0.022) 11px 12px
+    rgba(25, 23, 19, 0.045) 11px 12px
   );
 }

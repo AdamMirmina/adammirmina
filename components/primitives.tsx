@@ -23,7 +23,7 @@ export function Section({
           know where you are without a floating menu covering the work. */}
       <div className="mx-auto max-w-6xl px-6 lg:grid lg:grid-cols-[8rem_1fr] lg:gap-12">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <h2 className="mb-8 text-xs uppercase tracking-[0.18em] text-ink-faint lg:mb-0">
+          <h2 className="mb-8 text-xs font-semibold uppercase tracking-[0.18em] text-spot lg:mb-0">
             {label}
           </h2>
         </div>
@@ -78,7 +78,7 @@ export function Frame({
 
   return (
     <figure
-      className={`relative overflow-hidden rounded-sm bg-raise ${className}`}
+      className={`relative overflow-hidden rounded-sm bg-paper-2 ${className}`}
       style={{ aspectRatio: `${w} / ${h}` }}
     >
       {present ? (
@@ -92,10 +92,10 @@ export function Frame({
         />
       ) : (
         <figcaption className="frame-pending absolute inset-0 flex flex-col justify-end gap-2 border border-rule p-5">
-          <span className="text-[0.65rem] uppercase tracking-[0.18em] text-ink-faint">
+          <span className="text-[0.65rem] uppercase tracking-[0.18em] text-ink-3">
             Photo &middot; {w}:{h}
           </span>
-          <span className="max-w-md text-sm leading-relaxed text-ink-faint">{photo.brief}</span>
+          <span className="max-w-md text-sm leading-relaxed text-ink-3">{photo.brief}</span>
         </figcaption>
       )}
     </figure>
@@ -113,8 +113,8 @@ export function Facts({ facts }: { facts: { value: string; label: string }[] }) 
     <dl className="flex flex-wrap gap-x-10 gap-y-5">
       {facts.map((f) => (
         <div key={f.label} className="max-w-full sm:max-w-[13rem]">
-          <dt className="font-display text-3xl leading-none">{f.value}</dt>
-          <dd className="mt-2 text-sm leading-snug text-ink-dim">{f.label}</dd>
+          <dt className="font-display text-3xl font-bold leading-none tracking-tight">{f.value}</dt>
+          <dd className="mt-2 text-sm leading-snug text-ink-2">{f.label}</dd>
         </div>
       ))}
     </dl>
@@ -125,7 +125,7 @@ export function Stack({ items }: { items: string[] }) {
   // Plain text separated by hairline dots. Rounded filled chips are the single
   // most recognisable "a component library made this" tell.
   return (
-    <p className="text-xs uppercase tracking-[0.14em] text-ink-faint">
+    <p className="text-xs uppercase tracking-[0.14em] text-ink-3">
       {items.join("  ·  ")}
     </p>
   );
@@ -137,9 +137,9 @@ export function Out({ href, children }: { href: string; children: React.ReactNod
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group inline-flex items-baseline gap-1.5 text-sm text-ink transition-colors hover:text-ink-dim"
+      className="group inline-flex items-baseline gap-1.5 text-sm text-ink transition-colors hover:text-ink-2"
     >
-      <span className="border-b border-ink-faint pb-px transition-colors group-hover:border-ink-dim">
+      <span className="border-b border-ink-3 pb-px transition-colors group-hover:border-spot">
         {children}
       </span>
       <span aria-hidden className="translate-y-px text-xs">&#8599;</span>

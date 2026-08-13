@@ -16,21 +16,21 @@ export default function Home() {
           <div className="grid items-end gap-12 lg:grid-cols-[1.35fr_1fr]">
             <div>
               <Reveal>
-                <p className="mb-8 text-xs uppercase tracking-[0.18em] text-ink-faint">
+                <p className="mb-8 text-xs font-semibold uppercase tracking-[0.18em] text-spot">
                   {site.role}
                 </p>
               </Reveal>
               <Reveal delay={60}>
                 {/* clamp so it fills the line on a phone and on a 27-inch display
                     without a stack of breakpoints. */}
-                <h1 className="font-display leading-[0.92] tracking-tight [font-size:clamp(3.25rem,11vw,8.5rem)]">
+                <h1 className="font-display font-bold leading-[0.88] tracking-[-0.03em] [font-size:clamp(3.25rem,11vw,8.5rem)]">
                   Adam
                   <br />
                   Mirmina
                 </h1>
               </Reveal>
               <Reveal delay={140}>
-                <p className="mt-10 max-w-xl text-lg leading-relaxed text-ink-dim sm:text-xl">
+                <p className="mt-10 max-w-xl text-lg leading-relaxed text-ink-2 sm:text-xl">
                   {site.thesis}
                 </p>
               </Reveal>
@@ -55,9 +55,9 @@ export default function Home() {
           <Reveal delay={280}>
             <a
               href="#now"
-              className="mt-20 inline-flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-ink-faint transition-colors hover:text-ink-dim"
+              className="mt-20 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-spot transition-colors hover:text-ink"
             >
-              <span className="h-px w-10 bg-ink-faint" aria-hidden />
+              <span className="h-px w-10 bg-spot" aria-hidden />
               Start here
             </a>
           </Reveal>
@@ -68,10 +68,10 @@ export default function Home() {
           <dl className="grid gap-10 sm:grid-cols-3">
             {now.map((n, i) => (
               <Reveal key={n.label} delay={i * 70}>
-                <dt className="mb-3 text-xs uppercase tracking-[0.18em] text-ink-faint">
+                <dt className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-spot">
                   {n.label}
                 </dt>
-                <dd className="text-base leading-relaxed text-ink-dim">{n.body}</dd>
+                <dd className="text-base leading-relaxed text-ink-2">{n.body}</dd>
               </Reveal>
             ))}
           </dl>
@@ -93,10 +93,10 @@ export default function Home() {
                   <div>
                     <Reveal delay={40}>
                       <div className="mb-5 flex items-baseline gap-4">
-                        <h3 className="font-display text-4xl leading-none sm:text-5xl">
+                        <h3 className="font-display text-4xl font-bold leading-none tracking-tight sm:text-5xl">
                           {p.name}
                         </h3>
-                        <span className="text-xs uppercase tracking-[0.18em] text-ink-faint">
+                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-spot">
                           {p.kind} &middot; {p.year}
                         </span>
                       </div>
@@ -110,7 +110,7 @@ export default function Home() {
 
                   <div className="space-y-8">
                     <Reveal delay={100}>
-                      <p className="text-base leading-relaxed text-ink-dim">{p.body}</p>
+                      <p className="text-base leading-relaxed text-ink-2">{p.body}</p>
                     </Reveal>
                     <Reveal delay={140}>
                       <Facts facts={p.facts} />
@@ -132,17 +132,17 @@ export default function Home() {
           {/* Everything else, compactly. A portfolio that shows twelve projects at
               equal weight is asking the reader to do the editing. */}
           <div className="rule mt-24 pt-12 sm:mt-32">
-            <h3 className="mb-8 text-xs uppercase tracking-[0.18em] text-ink-faint">
+            <h3 className="mb-8 text-xs font-semibold uppercase tracking-[0.18em] text-spot">
               Also built
             </h3>
             <ul className="grid gap-x-12 gap-y-6 sm:grid-cols-2">
               {alsoBuilt.map((a, i) => (
                 <Reveal key={a.name} delay={i * 40}>
                   <li className="flex gap-4">
-                    <span className="min-w-[7.5rem] font-display text-lg leading-snug">
+                    <span className="min-w-[7.5rem] font-display text-lg font-semibold leading-snug">
                       {a.name}
                     </span>
-                    <span className="text-sm leading-relaxed text-ink-dim">{a.note}</span>
+                    <span className="text-sm leading-relaxed text-ink-2">{a.note}</span>
                   </li>
                 </Reveal>
               ))}
@@ -153,12 +153,12 @@ export default function Home() {
         {/* ---------------------------------------------------------------- research */}
         <Section id="research" label="Research" className="rule py-20 sm:py-28">
           <Reveal>
-            <h3 className="font-display text-4xl leading-tight sm:text-5xl">
+            <h3 className="font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
               Measuring aortic disease from ultrasound
             </h3>
           </Reveal>
           <Reveal delay={60}>
-            <p className="mt-5 text-sm text-ink-faint">
+            <p className="mt-5 text-sm text-ink-3">
               {research.lab} &middot; {research.period}
               <br />
               Principal Investigator {research.pi}. Supervised by {research.supervisor}.
@@ -166,7 +166,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={100}>
-            <p className="mt-10 max-w-2xl text-lg leading-relaxed text-ink-dim">
+            <p className="mt-10 max-w-2xl text-lg leading-relaxed text-ink-2">
               {research.context}
             </p>
           </Reveal>
@@ -180,7 +180,7 @@ export default function Home() {
               <Reveal key={f.head} delay={i * 60}>
                 <div className="grid gap-3 lg:grid-cols-[1fr_1fr] lg:gap-12">
                   <h4 className="text-xl leading-snug">{f.head}</h4>
-                  <p className="text-base leading-relaxed text-ink-dim">{f.body}</p>
+                  <p className="text-base leading-relaxed text-ink-2">{f.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -192,15 +192,15 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
             <div>
               <Reveal>
-                <h3 className="font-display text-4xl leading-none sm:text-5xl">
+                <h3 className="font-display text-4xl font-bold leading-none tracking-tight sm:text-5xl">
                   {studio.name}
                 </h3>
               </Reveal>
               <Reveal delay={60}>
-                <p className="mt-4 text-sm text-ink-faint">{studio.period}</p>
+                <p className="mt-4 text-sm text-ink-3">{studio.period}</p>
               </Reveal>
               <Reveal delay={100}>
-                <p className="mt-8 text-lg leading-relaxed text-ink-dim">{studio.body}</p>
+                <p className="mt-8 text-lg leading-relaxed text-ink-2">{studio.body}</p>
               </Reveal>
               <Reveal delay={140}>
                 <div className="mt-8">
@@ -216,7 +216,7 @@ export default function Home() {
           <ul className="mt-14 space-y-6">
             {studio.points.map((p, i) => (
               <Reveal key={i} delay={i * 60}>
-                <li className="max-w-3xl border-l border-rule pl-6 text-base leading-relaxed text-ink-dim">
+                <li className="max-w-3xl border-l border-rule pl-6 text-base leading-relaxed text-ink-2">
                   {p}
                 </li>
               </Reveal>
@@ -239,10 +239,10 @@ export default function Home() {
               <dl className="mt-12 space-y-8">
                 {music.points.map((m, i) => (
                   <Reveal key={m.head} delay={100 + i * 60}>
-                    <dt className="mb-2 text-xs uppercase tracking-[0.18em] text-ink-faint">
+                    <dt className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-spot">
                       {m.head}
                     </dt>
-                    <dd className="text-base leading-relaxed text-ink-dim">{m.body}</dd>
+                    <dd className="text-base leading-relaxed text-ink-2">{m.body}</dd>
                   </Reveal>
                 ))}
               </dl>
@@ -254,10 +254,10 @@ export default function Home() {
               {elsewhere.map((e, i) => (
                 <Reveal key={e.head} delay={i * 50}>
                   <li>
-                    <p className="mb-2 text-xs uppercase tracking-[0.18em] text-ink-faint">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-spot">
                       {e.head}
                     </p>
-                    <p className="text-sm leading-relaxed text-ink-dim">{e.body}</p>
+                    <p className="text-sm leading-relaxed text-ink-2">{e.body}</p>
                   </li>
                 </Reveal>
               ))}
@@ -270,7 +270,7 @@ export default function Home() {
           <Reveal>
             <a
               href={`mailto:${site.email}`}
-              className="font-display leading-none tracking-tight transition-colors hover:text-ink-dim [font-size:clamp(2rem,6vw,4.5rem)]"
+              className="font-display font-bold leading-none tracking-[-0.02em] transition-colors hover:text-spot [font-size:clamp(2rem,6vw,4.5rem)]"
             >
               {site.email}
             </a>
@@ -285,7 +285,7 @@ export default function Home() {
         </Section>
 
         <footer className="mx-auto max-w-6xl px-6 py-12">
-          <p className="text-xs text-ink-faint">
+          <p className="text-xs text-ink-3">
             Built and hosted by me. West Lafayette, Indiana and Cherry Hill, New Jersey.
           </p>
         </footer>

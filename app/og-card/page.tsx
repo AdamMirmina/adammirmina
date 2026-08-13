@@ -18,11 +18,11 @@ export const metadata: Metadata = {
 
 export default function OgCard() {
   return (
-    <div className="flex h-[630px] w-[1200px] flex-col justify-center bg-ground px-20">
-      <p className="mb-7 text-sm uppercase tracking-[0.2em] text-ink-faint">{site.role}</p>
+    <div className="flex h-[630px] w-[1200px] flex-col justify-center bg-paper px-20">
+      <p className="mb-7 text-sm uppercase tracking-[0.2em] text-ink-3">{site.role}</p>
       <h1 className="font-display text-[7.5rem] leading-none tracking-tight">Adam Mirmina</h1>
-      <p className="mt-10 max-w-3xl text-[2rem] leading-snug text-ink-dim">{site.thesis}</p>
-      <div className="mt-12 h-px w-28 bg-ink-faint" />
+      <p className="mt-10 max-w-3xl text-[2rem] leading-snug text-ink-2">{site.thesis}</p>
+      <div className="mt-12 h-px w-28 bg-ink-3" />
     </div>
   );
 }
