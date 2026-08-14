@@ -16,6 +16,16 @@ export function middleware(request: NextRequest) {
   const url = new URL(request.url);
   if (url.hostname === "localhost" || url.hostname === "127.0.0.1") return NextResponse.next();
 
+  // One canonical hostname. Two hostnames serving identical content splits
+  // search ranking between them and makes every shared link ambiguous, so www
+  // folds onto the apex with a 301 before the scheme check runs. Combined rather
+  // than chained: a www + http request should not take two round trips.
+  if (url.hostname === "www.adammirmina.com") {
+    url.hostname = "adammirmina.com";
+    url.protocol = "https:";
+    return NextResponse.redirect(url, 301);
+  }
+
   const forwarded = request.headers.get("x-forwarded-proto");
   let scheme = forwarded?.split(",")[0]?.trim();
   if (!scheme) {

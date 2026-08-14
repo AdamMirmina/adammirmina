@@ -14,5 +14,11 @@
   // DNS being pointed here. Useful for review, and it was the only way to see
   // the site at all while adammirmina.com still resolved to Vercel.
   "workers_dev": true,
-  "routes": [{ "pattern": "adammirmina.com", "custom_domain": true }]
+  // Both hostnames are bound so the Worker sees www too. The redirect itself
+  // lives in middleware.ts rather than in a dashboard redirect rule, so it is
+  // version controlled and ships on push like everything else.
+  "routes": [
+    { "pattern": "adammirmina.com", "custom_domain": true },
+    { "pattern": "www.adammirmina.com", "custom_domain": true }
+  ]
 }
