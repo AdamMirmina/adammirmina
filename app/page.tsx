@@ -65,7 +65,7 @@ export default function Home() {
 
         {/* ---------------------------------------------------------------- now */}
         <Section id="now" label="Now" className="rule py-20 sm:py-24">
-          <dl className="grid gap-10 sm:grid-cols-3">
+          <dl className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {now.map((n, i) => (
               <Reveal key={n.label} delay={i * 70}>
                 <dt className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-spot">

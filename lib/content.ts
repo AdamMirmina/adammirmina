@@ -46,6 +46,10 @@ export const now = [
     label: "Running",
     body: "Ramsgate Studio, a web design studio in South Jersey building and hosting sites for small businesses.",
   },
+  {
+    label: "Starting",
+    body: "A year with The Data Mine and the World Wildlife Fund, using satellite data to monitor mangrove coastline.",
+  },
 ];
 
 export type Project = {
