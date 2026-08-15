@@ -101,22 +101,20 @@ if (sq.info.channels !== 4 || sq.data.length !== 1024 * 1024 * 4) {
   process.exit(1);
 }
 
-// Circular alpha, written directly into the RGBA buffer. Inset by a pixel and
-// feathered over one pixel so no black fringe from the screenshot's background
-// survives on the rim.
+// SQUARE, not a disc. Adam, 2026-08-14: "put it back into the original format."
+// The avatar file is a square image; Google and YouTube round it in CSS at
+// display time, and so does every other surface that wants it round. Cropping
+// the corners off here would bake one presentation into the asset and throw away
+// pixels that a square-tile context (a Windows tile, a bookmark grid) would use.
+// Ship the source shape and let each surface mask it.
+//
+// The circular-alpha pass this replaced also had to feather a rim to hide the
+// screenshot's black background. Sourcing the real file removes the reason it
+// existed at all.
 const N = 1024;
-const px = sq.data;
-const R = N / 2 - 2;
-for (let y = 0; y < N; y++) {
-  for (let x = 0; x < N; x++) {
-    const d = Math.hypot(x + 0.5 - N / 2, y + 0.5 - N / 2);
-    let a = 255;
-    if (d > R + 1) a = 0;
-    else if (d > R) a = Math.round(255 * (R + 1 - d));
-    px[(y * N + x) * 4 + 3] = a;
-  }
-}
-const disc = await sharp(px, { raw: { width: N, height: N, channels: 4 } })
+const disc = await sharp(sq.data, {
+  raw: { width: N, height: N, channels: 4 },
+})
   .png()
   .toBuffer();
 
