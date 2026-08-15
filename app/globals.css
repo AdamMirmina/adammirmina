@@ -20,14 +20,22 @@
    sans while carrying warmth that suits the paper.
 --------------------------------------------------------------------------- */
 
+/* Cooled to blue and gray 2026-08-14, at Adam's request, replacing the warm
+   paper and the rust spot. The reason it works better here: the page now carries
+   his avatar as the favicon, and that mark is a navy and cyan "A". A rust accent
+   sat against it as a second, competing brand. Blue agrees with it.
+
+   Still one spot color doing one job, and still light. The grays are cool rather
+   than neutral so the blue reads as part of the system instead of an accent
+   dropped onto a gray page. */
 @theme inline {
-  --color-paper: #f6f3ec;      /* warm, not white; pure white glares on a phone */
-  --color-paper-2: #efeae0;    /* a shade down, for panels and empty photo slots */
-  --color-ink: #191713;        /* near-black with warmth, never #000 */
-  --color-ink-2: #5a554b;
-  --color-ink-3: #8d8779;
-  --color-rule: #ddd6c8;
-  --color-spot: #b8422a;       /* the second plate */
+  --color-paper: #f3f5f8;      /* cool and light; pure white glares on a phone */
+  --color-paper-2: #e7ecf2;
+  --color-ink: #12171d;        /* near-black with blue in it, never #000 */
+  --color-ink-2: #4b5763;
+  --color-ink-3: #8593a1;
+  --color-rule: #d3dae2;
+  --color-spot: #1663b0;       /* the second plate, and the avatar's blue */
 
   --font-display: var(--font-display);
   --font-sans: var(--font-body);
