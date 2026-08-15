@@ -76,11 +76,11 @@ export const projects: Project[] = [
     origin:
       "I run a summer pool-basketball league with my friends, and every score was being typed in by hand.",
     body:
-      "One fixed camera watches the pool. The pipeline finds each shot, calls it a make or a miss, and is learning to say who took it. Identity comes from coloured swim caps, because people who are wet and half-submerged thirty feet away carry none of the cues a face model needs.",
+      "One fixed camera watches the pool. The pipeline finds each shot, calls it a make or a miss, and is learning to say who took it. Identity comes from colored swim caps, because people who are wet and half-submerged thirty feet away carry none of the cues a face model needs.",
     facts: [
       { value: "82.2%", label: "on shots it never saw in training" },
       { value: "146", label: "shots judged by hand to train it" },
-      { value: "118 min", label: "of 4K footage recorded and labelled" },
+      { value: "118 min", label: "of 4K footage recorded and labeled" },
     ],
     stack: ["Python", "PyTorch", "YOLO11", "OpenCV"],
     href: "https://github.com/AdamMirmina/poolvision",
@@ -119,16 +119,16 @@ export const projects: Project[] = [
     kind: "Web app",
     year: "2026",
     origin:
-      "My partner has chromesthesia. She sees colour when she hears music, and had no way to write any of it down.",
+      "My partner has chromesthesia. She sees color when she hears music, and had no way to write any of it down.",
     body:
-      "A tool for recording what a note or a chord actually looks like to her, with microphone chord recognition so capture keeps up with playing. The point was never the visualisation, it was the data: a record that survives the device it was entered on.",
+      "A tool for recording what a note or a chord actually looks like to her, with microphone chord recognition so capture keeps up with playing. The point was never the visualization, it was the data: a record that survives the device it was entered on.",
     facts: [{ value: "1", label: "person it was built for" }],
     stack: ["Vite", "React", "Cloudflare Workers", "PocketBase"],
     photo: {
       src: "/photos/spectra.jpg",
       brief:
-        "The capture screen with several notes already mapped to colours. Colour is the whole subject, so let it fill the frame.",
-      alt: "Spectra mapping notes to colours",
+        "The capture screen with several notes already mapped to colors. Color is the whole subject, so let it fill the frame.",
+      alt: "Spectra mapping notes to colors",
       ratio: [16, 10],
     },
   },

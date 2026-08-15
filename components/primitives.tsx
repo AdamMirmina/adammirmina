@@ -102,7 +102,7 @@ export function Frame({
   );
 }
 
-/** Large figures, set as type. Never a card with a coloured dot next to a
+/** Large figures, set as type. Never a card with a colored dot next to a
     number: that is the house style of every dashboard template.
  *
  * The width cap is deliberately desktop-only. It exists to stop a label running
@@ -123,7 +123,7 @@ export function Facts({ facts }: { facts: { value: string; label: string }[] }) 
 
 export function Stack({ items }: { items: string[] }) {
   // Plain text separated by hairline dots. Rounded filled chips are the single
-  // most recognisable "a component library made this" tell.
+  // most recognizable "a component library made this" tell.
   return (
     <p className="text-xs uppercase tracking-[0.14em] text-ink-3">
       {items.join("  ·  ")}

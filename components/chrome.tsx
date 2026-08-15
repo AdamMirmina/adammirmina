@@ -16,7 +16,7 @@ const NAV = [
  * the first screen is only the name and nothing competes with it.
  *
  * The active link is marked with an underline rather than a filled pill. A
- * rounded solid-background active state is the most recognisable component-kit
+ * rounded solid-background active state is the most recognizable component-kit
  * default there is, and this site is arguing that it was made by hand.
  */
 export function TopBar() {
@@ -111,7 +111,7 @@ export function Reveals() {
           // the first should stay hidden. Anything now ABOVE the viewport has to
           // be revealed here or it never will be: it will not cross the boundary
           // a second time. This is not theoretical. Landing on /#music jumps most
-          // of the page in one smooth scroll, and elements travelling that fast
+          // of the page in one smooth scroll, and elements traveling that fast
           // can pass between observer samples entirely.
           const rootTop = e.rootBounds?.top ?? 0;
           if (e.boundingClientRect.bottom < rootTop) show(e.target);
@@ -142,7 +142,7 @@ export function Reveals() {
     //
     // It runs on a short repeat rather than once, because a single timer has to
     // guess when the smooth scroll finished. A jump to the bottom of a 10,000px
-    // page is still travelling at 700ms, so a one-shot check measures the wrong
+    // page is still traveling at 700ms, so a one-shot check measures the wrong
     // positions and leaves exactly one block stranded. Stops as soon as nothing
     // is left, and gives up after three seconds either way.
     const sweep = () => {
