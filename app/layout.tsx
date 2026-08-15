@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Newsreader } from "next/font/google";
+import { site } from "@/lib/content";
 import "./globals.css";
 
 /* The inverse of the usual portfolio pairing: sans for display, serif for
@@ -26,12 +27,14 @@ export const metadata: Metadata = {
     default: "Adam Mirmina",
     template: "%s · Adam Mirmina",
   },
-  description:
-    "I build software for problems I can point at, usually because someone I know had one. Data science and cognitive science at Purdue, cardiovascular imaging research, and Ramsgate Studio.",
+  // Drawn from site.thesis rather than retyped. Three hardcoded copies of the
+  // tagline lived here and all three survived a tagline change, so the page said
+  // one thing and every link preview and search result said the older one. The
+  // page is the only place the string should exist.
+  description: `${site.thesis} ${site.role}.`,
   openGraph: {
     title: "Adam Mirmina",
-    description:
-      "I build software for problems I can point at, usually because someone I know had one.",
+    description: site.thesis,
     url: "https://adammirmina.com",
     siteName: "Adam Mirmina",
     type: "website",
@@ -40,8 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Adam Mirmina",
-    description:
-      "I build software for problems I can point at, usually because someone I know had one.",
+    description: site.thesis,
     images: ["/og.png"],
   },
   alternates: { canonical: "/" },
