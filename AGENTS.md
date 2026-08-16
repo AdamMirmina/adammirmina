@@ -59,7 +59,19 @@ visible marker before trusting it.
 an image, a document, a spreadsheet, produce the real output and look at it.
 Checking that the markup contains the right elements proves structure, never
 layout. Querying the DOM proves the same. Only a screenshot shows what a person
-sees.
+sees. Look at the whole artifact, not a crop of it: a crop that happens to miss
+the thing under test reads exactly like a clean result.
+
+**When your check says fixed and the user says it is not, the disagreement is
+the finding.** Both statements are usually true, which means the check is
+measuring the wrong object, and it is not the user's eyes that are wrong. Stop
+running variations of a check that has already agreed with you and go find what
+it cannot see. Read the user's report for mechanism, not only for the
+complaint: a visual that shifts position between renders, or appears on some
+loads and not others, cannot be baked into a rendered file, so no amount of
+verifying that file will ever explain it. And before concluding that a given
+block of code is what draws something, confirm nothing else draws it too, in
+another language or another repo.
 
 **Read the warnings above the error.** An error says where a process gave up. The
 warnings say where it started going wrong, and those are different places. Grep a
