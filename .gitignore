@@ -50,8 +50,6 @@ next-env.d.ts
 # Handbook-synced agent docs and internal state: local only, never published.
 # This repo is public. Sessions on Adam's machine still get current rules from
 # the global ~/.claude/CLAUDE.md, which imports C:/dev/handbook directly.
-AGENTS.md
-CLAUDE.md
 docs/PHILOSOPHY.md
 docs/CREDENTIALS.md
 docs/BUILD-QUEUE.md
