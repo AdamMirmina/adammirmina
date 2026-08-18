@@ -25,6 +25,21 @@ messages.** Commits are authored by the repository owner alone. This matters mor
 in a public repo, not less, because the history is readable by anyone and only a
 rewrite gets a trailer back out.
 
+**Commit messages are plain descriptions of the change, and name nobody.** The
+subject says what changed, in the imperative: "Raise MIN_DROP_PX from 150 to
+325", not "A false call is a ball that never really falls". The test is whether
+the line still tells you what the commit did when it sits in `git log --oneline`
+among two hundred others. No verdicts, no scorelines, no essay titles.
+
+**Never put a person's name in a commit message** -- not the owner's, and above
+all not a third party's. Commit history is permanent and public repos are read
+by strangers; a private repo can also be made public later, at which point every
+name is already in history where only a rewrite removes it. Attribute
+impersonally: "found by review", "from review feedback". Quoting someone
+verbatim in a commit body is the same problem, since it publishes a private
+conversation. The body is still the right place for the reasoning -- write it
+about the code rather than about the people.
+
 **Re-check what landed before you ship.** A session's picture of a repo goes
 stale the moment someone else pushes, and nothing tells you. Fetch and compare
 against the real default branch by name before any deploy, release, or publish.
