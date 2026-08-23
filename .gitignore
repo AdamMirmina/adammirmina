@@ -62,3 +62,7 @@ _shots/
 # Build output
 .open-next/
 .wrangler/
+
+# Agent rules: delivered locally by sync, never published.
+AGENTS.md
+CLAUDE.md
