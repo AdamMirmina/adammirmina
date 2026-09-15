@@ -2,10 +2,9 @@
 //
 // The source is the seamless mark on its light plate, generated in the
 // seamless repo by its own `scripts/gen-icons.mjs` as `public/icon-512-light.png`
-// (the AM monogram with the infinity ribbon, navy on white). Adam, 2026-09-15:
-// "make the favicon for adammirmina.com the seamless logo". Before that the
-// source was his Google avatar, a cream disc with a geometric "A"; that version
-// of this script is in git history under e1f022a.
+// (the AM monogram with the infinity ribbon, navy on white). The previous
+// source was a cream disc with a geometric "A"; that version of this script
+// is in git history under e1f022a.
 //
 //   node scripts/gen-icons.mjs ../semester/public/icon-512-light.png
 //
