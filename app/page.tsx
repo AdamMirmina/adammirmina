@@ -45,11 +45,16 @@ export default function Home() {
         </p>
 
         {/* Clamped rather than stepped through breakpoints, so it fills the
-            measure on a phone and on a wide display without a stack of rules. */}
-        <h1 className="font-display font-bold leading-[0.9] tracking-[-0.03em] [font-size:clamp(2.75rem,10vw,5.5rem)]">
+            measure on a phone and on a wide display without a stack of rules.
+
+            One line from 640px up. The name is about 590px at the 88px cap,
+            inside the 672px measure, and stacking it there read as a wrap
+            rather than a choice (2026-09-17: "don't wrap the word mirmina").
+            On a phone the break stays: at 44px the surname alone is most of
+            a 320px column. */}
+        <h1 className="font-display font-bold leading-[0.9] tracking-[-0.03em] [font-size:clamp(2.75rem,10vw,5.5rem)] sm:whitespace-nowrap">
           Adam
-          <br />
-          Mirmina
+          <br className="sm:hidden" /> Mirmina
         </h1>
 
         <hr className="mt-10 mb-9 w-16 border-0 border-t border-spot" />
@@ -58,10 +63,10 @@ export default function Home() {
           {site.thesis}
         </p>
 
-        {/* The email is the largest interactive thing on the page, because it is
-            the action worth taking here. The phone sits under it at body size
-            rather than beside it: two contact methods at equal weight makes
-            neither one the obvious move. */}
+        {/* The email is the largest text on the page and the phone sits under it
+            at body size rather than beside it: two contact methods at equal
+            weight makes neither one the obvious move. The one filled control is
+            the booking button below them, so the obvious move is a call. */}
         <a
           href={`mailto:${site.email}`}
           className="mt-10 inline-block font-display font-semibold leading-none tracking-[-0.02em] transition-colors hover:text-spot [font-size:clamp(1.15rem,3.5vw,1.6rem)]"
@@ -76,6 +81,16 @@ export default function Home() {
             {site.phone.display}
           </a>
         </p>
+
+        {/* Books a slot on call.adammirmina.com, which reads his real calendar.
+            A rounded rectangle, not a pill: 6px on a 46px control. */}
+        <a
+          href={site.links.call}
+          className="mt-9 inline-flex items-center gap-2.5 rounded-md bg-spot px-5 py-3 font-display text-[0.95rem] font-semibold text-paper transition-colors hover:bg-ink"
+        >
+          Meet with Adam
+          <span aria-hidden className="translate-y-px">→</span>
+        </a>
 
         <ul className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-rule pt-7">
           {links.map((l) => (

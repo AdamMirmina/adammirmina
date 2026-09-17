@@ -25,5 +25,6 @@ export const site = {
     github: "https://github.com/AdamMirmina",
     linkedin: "https://linkedin.com/in/adam-mirmina",
     studio: "https://ramsgatestudio.com",
+    call: "https://call.adammirmina.com",
   },
 };
