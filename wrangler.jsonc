@@ -3,7 +3,11 @@
   // Workers rather than Vercel per the standing default for anything new here.
   "name": "adammirmina",
   "account_id": "7add713aa8b1453972d1181241b4f88c",
-  "main": ".open-next/worker.js",
+  // worker.js wraps the generated .open-next/worker.js: the site's own routes
+  // go to Next, every other path to the `share` Worker (a page lives at
+  // adammirmina.com/<slug> since 2026-09-18). See worker.js.
+  "main": "worker.js",
+  "services": [{ "binding": "SHARE", "service": "share" }],
   "compatibility_date": "2026-01-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
