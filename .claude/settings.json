@@ -1,0 +1,6 @@
+{
+  "claudeMdExcludes": [
+    "**/handbook/shared-agent-rules.md",
+    "**/handbook/lessons.generated/REST.md"
+  ]
+}
